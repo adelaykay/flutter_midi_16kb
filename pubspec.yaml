@@ -8,8 +8,8 @@ repository: https://github.com/adelaykay/flutter_midi_16kb
 issue_tracker: https://github.com/adelaykay/flutter_midi_16kb/issues
 
 environment:
-  sdk: ^3.9.2
-  flutter: '>=3.3.0'
+  sdk: ">=3.9.2 <4.0.0"
+  flutter: ">=3.3.0"
 
 dependencies:
   flutter:
