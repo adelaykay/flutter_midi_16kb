@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 class FlutterMidi16kb {
@@ -11,7 +12,9 @@ class FlutterMidi16kb {
       _initialized = result ?? false;
       return _initialized;
     } catch (e) {
-      print('Error initializing: $e');
+      if (kDebugMode) {
+        print('Error initializing: $e');
+      }
       return false;
     }
   }
@@ -22,7 +25,9 @@ class FlutterMidi16kb {
       final result = await _channel.invokeMethod<bool>('loadSoundfont', {'path': path});
       return result ?? false;
     } catch (e) {
-      print('Error loading soundfont: $e');
+      if (kDebugMode) {
+        print('Error loading soundfont: $e');
+      }
       return false;
     }
   }
@@ -32,7 +37,9 @@ class FlutterMidi16kb {
       final result = await _channel.invokeMethod<bool>('unloadSoundfont');
       return result ?? false;
     } catch (e) {
-      print('Error unloading soundfont: $e');
+      if (kDebugMode) {
+        print('Error unloading soundfont: $e');
+      }
       return false;
     }
   }
@@ -42,7 +49,9 @@ class FlutterMidi16kb {
     try {
       await _channel.invokeMethod('playNote', {'channel': channel, 'key': key, 'velocity': velocity});
     } catch (e) {
-      print('Error playing note: $e');
+      if (kDebugMode) {
+        print('Error playing note: $e');
+      }
     }
   }
 
@@ -50,7 +59,9 @@ class FlutterMidi16kb {
     try {
       await _channel.invokeMethod('stopNote', {'channel': channel, 'key': key});
     } catch (e) {
-      print('Error stopping note: $e');
+      if (kDebugMode) {
+        print('Error stopping note: $e');
+      }
     }
   }
 
@@ -58,7 +69,9 @@ class FlutterMidi16kb {
     try {
       await _channel.invokeMethod('stopAllNotes');
     } catch (e) {
-      print('Error stopping all notes: $e');
+      if (kDebugMode) {
+        print('Error stopping all notes: $e');
+      }
     }
   }
 
@@ -66,7 +79,9 @@ class FlutterMidi16kb {
     try {
       await _channel.invokeMethod('changeProgram', {'channel': channel, 'program': program});
     } catch (e) {
-      print('Error changing program: $e');
+      if (kDebugMode) {
+        print('Error changing program: $e');
+      }
     }
   }
 
@@ -75,7 +90,9 @@ class FlutterMidi16kb {
       await _channel.invokeMethod('dispose');
       _initialized = false;
     } catch (e) {
-      print('Error disposing: $e');
+      if (kDebugMode) {
+        print('Error disposing: $e');
+      }
     }
   }
 }

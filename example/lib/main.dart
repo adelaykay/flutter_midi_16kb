@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
@@ -33,7 +34,6 @@ class TinySound extends StatefulWidget {
 class _TinySoundState extends State<TinySound> {
   bool _initialized = false;
   bool _loaded = false;
-  String? _currentSoundfontPath;
 
   @override
   void initState() {
@@ -48,7 +48,9 @@ class _TinySoundState extends State<TinySound> {
         _initialized = result;
       });
     } catch (e) {
-      print('Error initializing: $e');
+      if (kDebugMode) {
+        print('Error initializing: $e');
+      }
     }
   }
 
@@ -63,13 +65,14 @@ class _TinySoundState extends State<TinySound> {
       final File tempFile = File('${tempDir.path}/$fileName');
 
       await tempFile.writeAsBytes(bytes);
-      _currentSoundfontPath = tempFile.path;
       final result = await FlutterMidi16kb.loadSoundfont(tempFile.path);
       setState(() {
         _loaded = result;
       });
     } catch (e) {
-      print('Error loading soundfont: $e');
+      if (kDebugMode) {
+        print('Error loading soundfont: $e');
+      }
     }
   }
 
@@ -77,7 +80,9 @@ class _TinySoundState extends State<TinySound> {
     try {
       await FlutterMidi16kb.playNote(key: 60);
     } catch (e) {
-      print('Error playing note: $e');
+      if (kDebugMode) {
+        print('Error playing note: $e');
+      }
     }
   }
 
@@ -85,7 +90,9 @@ class _TinySoundState extends State<TinySound> {
     try {
       await FlutterMidi16kb.stopNote(key: 60);
     } catch (e) {
-      print('Error stopping note: $e');
+      if (kDebugMode) {
+        print('Error stopping note: $e');
+      }
     }
   }
 
@@ -93,7 +100,9 @@ class _TinySoundState extends State<TinySound> {
     try {
       await FlutterMidi16kb.stopAllNotes();
     } catch (e) {
-      print('Error stopping all notes: $e');
+      if (kDebugMode) {
+        print('Error stopping all notes: $e');
+      }
     }
   }
 
@@ -101,7 +110,9 @@ class _TinySoundState extends State<TinySound> {
     try {
       await FlutterMidi16kb.changeProgram(program: 1);
     } catch (e) {
-      print('Error changing program: $e');
+      if (kDebugMode) {
+        print('Error changing program: $e');
+      }
     }
   }
 
