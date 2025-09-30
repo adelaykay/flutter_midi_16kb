@@ -8,3 +8,5 @@
 
 ## 0.0.2
 - Transferred package to empyrealworks.com publisher.
+- Fixed: All native libraries are now properly 16 KB page-size aligned (NDK r27).
+- Improved stability when building release APKs/AABs.
