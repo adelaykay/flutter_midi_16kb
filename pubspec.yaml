@@ -12,7 +12,6 @@ environment:
   sdk: ">=3.9.2 <4.0.0"
   flutter: ">=3.3.0"
 
-publisher: empyrealworks.com
 dependencies:
   flutter:
     sdk: flutter
