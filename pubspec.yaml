@@ -1,7 +1,11 @@
 name: flutter_midi_16kb
-description: "A new Flutter plugin project."
+description: >
+  A Flutter plugin providing low-latency MIDI soundfont (SF2) playback 
+  using TinySoundFont and Oboe with 16KB page-size alignment for Android.
 version: 0.0.1
-homepage:
+homepage: https://github.com/adelaykay/flutter_midi_16kb
+repository: https://github.com/adelaykay/flutter_midi_16kb
+issue_tracker: https://github.com/adelaykay/flutter_midi_16kb/issues
 
 environment:
   sdk: ^3.9.2
@@ -39,34 +43,3 @@ flutter:
         pluginClass: FlutterMidi16kbPlugin
       ios:
         pluginClass: FlutterMidi16kbPlugin
-
-  # To add assets to your plugin package, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
-  #
-  # For details regarding assets in packages, see
-  # https://flutter.dev/to/asset-from-package
-  #
-  # An image asset can refer to one or more resolution-specific "variants", see
-  # https://flutter.dev/to/resolution-aware-images
-
-  # To add custom fonts to your plugin package, add a fonts section here,
-  # in this "flutter" section. Each entry in this list should have a
-  # "family" key with the font family name, and a "fonts" key with a
-  # list giving the asset and other descriptors for the font. For
-  # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
-  #
-  # For details regarding fonts in packages, see
-  # https://flutter.dev/to/font-from-package

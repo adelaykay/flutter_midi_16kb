@@ -1,3 +1,7 @@
 ## 0.0.1
 
-* TODO: Describe initial release.
+- Initial release
+- Added Android support
+- Load and unload SoundFonts
+- Play/stop individual MIDI notes
+- Change program (instrument)
